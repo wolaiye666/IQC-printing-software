@@ -1,0 +1,30 @@
+name: Build with .NET SDK
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 .NET SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '6.0.x'   # 或 8.0.x
+
+      - name: 发布为单文件 EXE
+        run: |
+          dotnet publish FileBatchPrinter.csproj -c Release -o publish `
+            -p:PublishSingleFile=true
+
+      - name: 上传生成的 EXE
+        uses: actions/upload-artifact@v4
+        with:
+          name: FileBatchPrinter
+          path: publish/*.exe
