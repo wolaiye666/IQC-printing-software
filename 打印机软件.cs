@@ -231,7 +231,7 @@ namespace FileBatchPrinterGUI
         // 设置界面布局
         private void SetupUI()
         {
-            this.Text = "文件批量打印工具 (授权版)";
+            this.Text = "检验表批量打印 Email:guoqiang.w@cn.interplex.com";
             this.Size = new Size(750, 560);
             this.StartPosition = FormStartPosition.CenterScreen;
 
@@ -279,7 +279,7 @@ namespace FileBatchPrinterGUI
             // 作者版本标签
             lblAuthorVersion = new Label
             {
-                Text = "作者:王国强 版本A0",
+                Text = "作者:王国强 REV.A1",
                 Location = new Point(230, 424),
                 Size = new Size(200, 23),
                 TextAlign = ContentAlignment.MiddleLeft,
