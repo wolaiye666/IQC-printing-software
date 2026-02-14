@@ -74,11 +74,11 @@ namespace FileBatchPrinterGUI
         private DateTime authorizedDate;
 
         public Form1()
-        {
-            if (!CheckLicense()) { Environment.Exit(0); return; }
-            InitializeComponent();
-            SetupUI();
-        }
+{
+    if (!CheckLicense()) { Environment.Exit(0); return; }
+    // 删除 InitializeComponent(); 因为 UI 已由 SetupUI 初始化
+    SetupUI();
+}
 
         private bool CheckLicense()
         {
